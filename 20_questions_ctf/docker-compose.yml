@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  que:
+    build: .
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    ports:
+      - "127.0.0.1:8001:80"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 1G
