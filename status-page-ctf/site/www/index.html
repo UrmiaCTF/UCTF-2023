@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Status</title>
+
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <div id="container">
+    <h1>Server Status</h1>
+    <iframe id="uptime-iframe" src="/cgi-bin/uptime.sh">
+    </iframe>
+  </div>
+
+  <script>
+    const styleLink = document.createElement('link');
+    styleLink.href = '/styles/base.css';
+    styleLink.rel = "stylesheet";
+
+    const frameEls = document.getElementsByTagName('iframe');
+    for (let i = 0; i < frameEls.length; i++) {
+      const frameEl = frameEls[i];
+      frameEl.addEventListener('load', () => {
+        frameEl.contentDocument.head.appendChild(styleLink);
+
+        setTimeout(() => {
+          frameEl.contentWindow.location.reload();
+        }, 5000);
+      });
+    }
+  </script>
+</body>
+
+</html>

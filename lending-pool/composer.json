@@ -1,0 +1,20 @@
+{
+    "name": "uctf/crypto",
+    "description": "A 2023 UCTF challenge",
+    "type": "project",
+    "require": {
+        "web3p/web3.php": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Uctf\\Crypto\\": "public/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AmirHossein",
+            "email": "amir.1381.azhdarnzhad@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

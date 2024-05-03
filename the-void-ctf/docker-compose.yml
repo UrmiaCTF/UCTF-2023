@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  front:
+    build: ./front
+
+  hs:
+    image: measri/tor-hs:0.1
+    environment:
+      - TOR_SOCKS5_PROXY=host.docker.internal:1080
+      - TOR_HS_NON_ANON=1
+      - TOR_HS_LISTEN_PORT=80
+      - TOR_HS_DEST_ADDR=front:80
+      - TOR_HS_PRIVATE_KEY=PT0gZWQyNTUxOXYxLXNlY3JldDogdHlwZTAgPT0AAACYeChL/WetqehyLhNBKVQ5WAP5FaVYJbBFLr2LqJEkTAPS1ZRlIf3jSmGWt+z0OF4Y6+8GkIJroQRvMVuNJejD
+    depends_on:
+      - front
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

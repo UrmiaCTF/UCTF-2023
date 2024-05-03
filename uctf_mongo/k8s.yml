@@ -1,0 +1,177 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: uctf-ch-cp-db-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: uctf-ch-cp-db
+  name: uctf-ch-cp-db
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  selector:
+    matchLabels:
+      app: uctf-ch-cp-db
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: uctf-ch-cp-db
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo:7.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 27017
+              protocol: TCP
+          env:
+            - name: MONGO_DATA_DIR
+              value: /data/db
+          volumeMounts:
+            - mountPath: /data/db
+              name: db-data
+          resources:
+            limits:
+              cpu: "200m"
+              ephemeral-storage: 128Mi
+              memory: 512Mi
+            requests:
+              cpu: "200m"
+              ephemeral-storage: 128Mi
+              memory: 512Mi
+          terminationMessagePath: /var/log/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - name: db-data
+          persistentVolumeClaim:
+            claimName: uctf-ch-cp-db-pvc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: uctf-ch-cp-db
+spec:
+  selector:
+    app: uctf-ch-cp-db
+  ports:
+    - port: 27017
+      targetPort: 27017
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: uctf-ch-cp
+  name: uctf-ch-cp
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  selector:
+    matchLabels:
+      app: uctf-ch-cp
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: uctf-ch-cp
+    spec:
+      containers:
+        - name: matrix
+          image: registry.uctf.ir/vafa/mongo-cp:0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          env:
+            - name: HOST
+              value: "0.0.0.0"
+            - name: PORT
+              value: "80"
+            - name: MONGO_HOST
+              value: uctf-ch-cp-db
+            - name: MONGO_PORT
+              value: "27017"
+          command:
+            [
+              "/usr/src/app/wait-for-it.sh",
+              uctf-ch-cp-db:27017,
+              "--",
+              "nodemon",
+              "server",
+            ]
+          resources:
+            limits:
+              cpu: "500m"
+              ephemeral-storage: 128Mi
+              memory: 512Mi
+            requests:
+              cpu: "500m"
+              ephemeral-storage: 128Mi
+              memory: 512Mi
+          terminationMessagePath: /var/log/termination-log
+          terminationMessagePolicy: File
+      imagePullSecrets:
+        - name: uctf-registry-secret
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: uctf-ch-cp
+spec:
+  selector:
+    app: uctf-ch-cp
+  ports:
+    - port: 80
+      targetPort: 80
+
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: uctf-ch-cp
+  labels:
+    app: uctf-ch-cp
+  annotations:
+spec:
+  host: cp.uctf.ir
+  port:
+    targetPort: 80
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: uctf-ch-cp
+    weight: 100
+  wildcardPolicy: None

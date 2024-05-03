@@ -1,0 +1,27 @@
+{                                                               
+    "listeners": {                                                         
+        "*:80": {                                                          
+            "pass": "routes"                                
+        }                                                                  
+    },
+    "routes": [
+        {
+            "match": {
+                "uri": "!/index.php"
+            },
+            "action": {
+                "share": "/www$uri",
+                "fallback": {
+                    "pass": "applications/captcha1"
+                }
+            }
+        }
+    ],
+    "applications": {                                                      
+        "captcha1": {                                                      
+            "type": "php",                                                 
+            "root": "/www/",                                               
+            "index": "index.php"                                           
+        }                                                                  
+    }                                                                      
+}

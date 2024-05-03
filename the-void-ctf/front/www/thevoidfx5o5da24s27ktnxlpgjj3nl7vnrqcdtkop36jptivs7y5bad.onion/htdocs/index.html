@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Void</title>
+
+  <style>
+    @font-face {
+      font-family: TopazPlus;
+      src: url('font/TopazPlus.ttf');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      font-size: 130%;
+    }
+
+    body {
+      font-family: TopazPlus, sans-serif;
+
+      color: black;
+      background-color: white;
+
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+
+    #main {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      z-index: -100;
+    }
+
+    #main>* {
+      width: 100%;
+      height: 100%;
+    }
+
+    #container {
+      padding: 50px;
+    }
+
+    #bottom-container {
+      position: absolute;
+
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      padding: 20px;
+
+      font-size: 65%;
+    }
+
+    #bottom-container>* {
+      margin: 0 auto;
+    }
+
+    #escape-button {
+      display: inline-block;
+
+      font-size: larger;
+      text-decoration: underline;
+      color: red;
+    }
+
+    #escape-button:hover {
+      color: darkred;
+    }
+
+    .text {
+      display: table;
+    }
+
+    .text-small {
+      font-size: smaller;
+    }
+
+    .text:hover {
+      color: grey;
+    }
+
+    .spacer {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+
+    .blink {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main"></div>
+  <div id="container">
+    <h1 class="text">You're lost in t̶͇̅͑ḩ̷̧̇̊e̵̠̾ ̴͍̠͑͘v̸̼̹̂ờ̸̡i̵͍͗̋d̴̻̫̓͋</h1>
+    <h2 class="text">Can you find your way out?<span class="blink"> |</span></h2>
+    <br class="spacer">
+
+    <!-- You should escape to a _darker_ side of www.google.com -->
+    <a id="escape-button" title="ẽ̷̦̳̩́̏s̴̰̭͗͘͝c̵͕͙̣̔a̵̼͕͌̄p̴̙͉̋̈́ẽ̷̢̫͙͂" href="https://www.google.com">Escape</a>
+  </div>
+  <div id="bottom-container">
+    <p title="Host" class="text">Current host: thevoidfx5o5da24s27ktnxlpgjj3nl7vnrqcdtkop36jptivs7y5bad.onion</p>
+    <p title="Webserver" class="text text-small">lighttpd/1.4.71</p>
+  </div>
+
+  <script src="codef/codef_core.js"></script>
+  <script src="codef/codef_starfield.js"></script>
+  <script>
+    const canvasWidth = 800;
+    const canvasHeight = 600;
+    const myCanvas = new canvas(canvasWidth, canvasHeight, 'main');
+    const starfield = new starfield3D(myCanvas, 1000, 1.5, canvasWidth, canvasHeight,
+      canvasWidth / 2, canvasHeight / 2, '#000000', 120, 0, 0);
+
+    function animLoop() {
+      myCanvas.fill('#FFFFFF');
+      starfield.draw();
+
+      requestAnimFrame(animLoop);
+    }
+
+    window.addEventListener('load', () => {
+      animLoop();
+
+      window.setInterval(() => {
+        const cursorEls = document.getElementsByClassName('blink');
+        for (let i = 0; i < cursorEls.length; i++) {
+          const cursorEl = cursorEls[i];
+          cursorEl.style.visibility = (cursorEl.style.visibility == 'hidden') ? 'visible' : 'hidden';
+        }
+      }, 400);
+    });
+  </script>
+</body>
+
+</html>

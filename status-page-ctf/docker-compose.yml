@@ -1,0 +1,17 @@
+version: '3.11'
+
+services:
+  site:
+    build:
+      context: ./site
+      args:
+        FLAG_USER: m4d0k4
+        FLAG_USER_PASS: kaznyannyan4
+        FLAG_USER_PASS_ALGO: md5
+        FLAG_USER_GECOS: "Madoka Kaname"
+    ports:
+      - "127.0.0.1:8001:80"
+    restart: always
+    read_only: true
+    privileged: true
+    cgroup: host

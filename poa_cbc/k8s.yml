@@ -1,0 +1,196 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: uctf-ch-poa-db-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: uctf-ch-poa-db
+  name: uctf-ch-poa-db
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  selector:
+    matchLabels:
+      app: uctf-ch-poa-db
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: uctf-ch-poa-db
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo:7.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 27017
+              protocol: TCP
+          env:
+            - name: MONGO_DATA_DIR
+              value: /data/db
+          volumeMounts:
+            - mountPath: /data/db
+              name: db-data
+          resources:
+            limits:
+              cpu: "200m"
+              ephemeral-storage: 128Mi
+              memory: 512Mi
+            requests:
+              cpu: "200m"
+              ephemeral-storage: 128Mi
+              memory: 512Mi
+          terminationMessagePath: /var/log/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - name: db-data
+          persistentVolumeClaim:
+            claimName: uctf-ch-poa-db-pvc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: uctf-ch-poa-db
+spec:
+  selector:
+    app: uctf-ch-poa-db
+  ports:
+    - port: 27017
+      targetPort: 27017
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: uctf-ch-poa-token-secret
+stringData:
+  pass: thisisaveryverystrongpassword
+  salt: catdogcartoon
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: uctf-ch-poa
+  name: uctf-ch-poa
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 3
+  selector:
+    matchLabels:
+      app: uctf-ch-poa
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: uctf-ch-poa
+    spec:
+      containers:
+        - name: matrix
+          image: registry.uctf.ir/vafa/poa-cbc:0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          env:
+            - name: TOKEN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: uctf-ch-poa-token-secret
+                  key: pass
+            - name: TOKEN_SALT
+              valueFrom:
+                secretKeyRef:
+                  name: uctf-ch-poa-token-secret
+                  key: salt
+            - name: HOST
+              value: "0.0.0.0"
+            - name: PORT
+              value: "80"
+            - name: MONGO_HOST
+              value: uctf-ch-poa-db
+            - name: MONGO_PORT
+              value: "27017"
+          command:
+            [
+              "/usr/src/app/wait-for-it.sh",
+              "uctf-ch-poa-db:27017",
+              "--",
+              "nodemon",
+              "server",
+            ]
+          resources:
+            limits:
+              cpu: "1000m"
+              ephemeral-storage: 128Mi
+              memory: 512Mi
+            requests:
+              cpu: "1000m"
+              ephemeral-storage: 128Mi
+              memory: 512Mi
+          terminationMessagePath: /var/log/termination-log
+          terminationMessagePolicy: File
+      imagePullSecrets:
+        - name: uctf-registry-secret
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: uctf-ch-poa
+spec:
+  selector:
+    app: uctf-ch-poa
+  ports:
+    - port: 80
+      targetPort: 80
+
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: uctf-ch-poa
+  labels:
+    app: uctf-ch-poa
+  annotations:
+spec:
+  host: matrix.uctf.ir
+  port:
+    targetPort: 80
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: uctf-ch-poa
+    weight: 100
+  wildcardPolicy: None

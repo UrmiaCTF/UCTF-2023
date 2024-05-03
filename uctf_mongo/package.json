@@ -1,0 +1,32 @@
+{
+  "name": "uctf_mongodb",
+  "version": "1.0.0",
+  "description": "MongoDB NoSQL injection on Express.js webserver challenge",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "PORT=3000 HOST=localhost MONGO_PORT=27017 MONGO_HOST=localhost node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.uctf.ir/uctf/uctf_mongo.git"
+  },
+  "keywords": [
+    "Web",
+    "NoSQL",
+    "Injection",
+    "attack",
+    "MongoDB"
+  ],
+  "author": "VafaTarighi",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^7.4.3",
+    "morgan": "^1.10.0",
+    "unique-username-generator": "^1.2.0",
+    "uuid": "^9.0.0"
+  }
+}
