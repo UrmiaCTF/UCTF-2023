@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  cryptor:
+    build: .
+    restart: always
+    ports:
+      - "127.0.0.1:6001:7000"
+    environment:
+      - CRYPTOR_FLAG=uctf{d1d_y0u_ju57_br34k_435}
+      - CRYPTOR_KEY=7921d65ca23ddb2f1d2ee9434ac3b3f6
+      - CRYPTOR_TIMEOUT=16
+    read_only: true
