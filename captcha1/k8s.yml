@@ -1,0 +1,143 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: uctf-ch-captcha1-redis
+  name: uctf-ch-captcha1-redis
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  selector:
+    matchLabels:
+      app: uctf-ch-captcha1-redis
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: uctf-ch-captcha1-redis
+    spec:
+      containers:
+        - image: redis:7-alpine
+          imagePullPolicy: Always
+          name: redis
+          ports:
+            - containerPort: 6379
+              protocol: TCP
+          resources:
+            limits:
+              cpu: "250m"
+              ephemeral-storage: 256Mi
+              memory: 512Mi
+            requests:
+              cpu: "250m"
+              ephemeral-storage: 256Mi
+              memory: 512Mi
+          terminationMessagePath: /var/log/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: uctf-ch-captcha1-redis
+spec:
+  selector:
+    app: uctf-ch-captcha1-redis
+  ports:
+    - port: 6379
+      targetPort: 6379
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: uctf-ch-captcha1
+  name: uctf-ch-captcha1
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 3
+  selector:
+    matchLabels:
+      app: uctf-ch-captcha1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: uctf-ch-captcha1
+    spec:
+      containers:
+        - name: captcha1
+          image: registry.uctf.ir/youngmind1/captcha1-ctf:0.2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          env:
+            - name: REDIS_HOST
+              value: uctf-ch-captcha1-redis
+            - name: REDIS_PORT
+              value: "6379"
+          resources:
+            limits:
+              cpu: "250m"
+              ephemeral-storage: 256Mi
+              memory: 512Mi
+            requests:
+              cpu: "250m"
+              ephemeral-storage: 256Mi
+              memory: 512Mi
+          terminationMessagePath: /var/log/termination-log
+          terminationMessagePolicy: File
+      imagePullSecrets:
+        - name: uctf-registry-secret
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: uctf-ch-captcha1
+spec:
+  selector:
+    app: uctf-ch-captcha1
+  ports:
+    - port: 80
+      targetPort: 80
+
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: uctf-ch-captcha1-route
+  labels:
+    app: uctf-ch-captcha1-route
+  annotations:
+spec:
+  host: captcha1.uctf.ir
+  port:
+    targetPort: 80
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: uctf-ch-captcha1
+    weight: 100
+  wildcardPolicy: None
