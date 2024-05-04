@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  lplz:
+    build: .
+    ports:
+      - 80:80
+    environment:
+      - LPLZ_FLAG=uctf{m4yu5h11_15_my_w41fu}
+      - LPLZ_PRIVKEY=ZTWAcGVGl2IFjnFAdH1CeYqSHqUGuoLdReJuBdcbPKo
+      - LPLZ_PUBKEY_X=6lpiwqx45LLPR25UIIYuF2wTTs9seLy3iUA6OYY50kE
+      - LPLZ_PUBKEY_Y=jY7XafkM60dARvfIIXuNsKIDgqljfYkgN1AFLyPSJtw
+    restart: always
+    read_only: true
+    tmpfs:
+      - /var/run/apache2/:size=256m
