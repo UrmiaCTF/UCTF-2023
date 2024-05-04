@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <div id="main"></div>
+    <div id="container">
+        <h1>E Corp. Blog</h1>
+        <h2 id="post-title"></h2>
+        <pre id="post-text"></pre>
+    </div>
+
+    <script src="/scripts/codef/codef_core.js"></script>
+    <script src="/scripts/codef/codef_starfield.js"></script>
+    <script src="/scripts/anim.js"></script>
+
+    <script>
+        const API_PATH = '/api/view.php';
+
+        async function fetchPost(id) {
+            const fetchResult = await fetch(API_PATH, {
+                method: 'POST',
+                cache: 'no-cache',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({ post: `/posts/${id}` })
+            });
+
+            const resp = await fetchResult.json();
+            if (resp.status == 'success') {
+                return resp.post;
+            } else {
+                throw new Error(resp.msg);
+            }
+        }
+
+        window.addEventListener('load', async () => {
+            const titleEl = document.getElementById('post-title');
+            const textEl = document.getElementById('post-text');
+
+            const postId = /[^/]*$/.exec(window.location.pathname)[0];
+            if (postId.length == 0) {
+                titleEl.innerText = 'Missing post ID';
+                return;
+            }
+
+            let post;
+            try {
+                post = await fetchPost(postId);
+            } catch (e) {
+                titleEl.innerText = e.message;
+                return;
+            }
+            document.title = postId;
+            titleEl.innerHTML = `${postId} <span class="blink"> |</span>`;
+
+            textEl.innerText = post;
+        });
+    </script>
+</body>
+
+</html>

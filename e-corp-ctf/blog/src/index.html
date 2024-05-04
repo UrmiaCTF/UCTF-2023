@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E Corp. Blog</title>
+
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <div id="main"></div>
+    <div id="container">
+        <h1>E Corp. Blog</h1>
+        <h2>Recent posts<span class="blink"> |</span></h3>
+            <ul>
+                <li>
+                    <h3 class="post-link">Azita</h3>
+                </li>
+                <li>
+                    <h3 class="post-link">Atoosa</h3>
+                </li>
+                <li>
+                    <h3 class="post-link">Anita</h3>
+                </li>
+                <li>
+                    <h3 class="post-link">Atina</h3>
+                </li>
+            </ul>
+    </div>
+
+    <script src="/scripts/codef/codef_core.js"></script>
+    <script src="/scripts/codef/codef_starfield.js"></script>
+    <script src="/scripts/anim.js"></script>
+
+    <script>
+        const VIEW_PATH = '/view';
+
+        const postLinks = document.getElementsByClassName('post-link');
+        for (let i = 0; i < postLinks.length; i++) {
+            const el = postLinks[i];
+            el.addEventListener('click', () => {
+                window.location.href = `${VIEW_PATH}/${el.innerText}`;
+            });
+        }
+    </script>
+</body>
+
+</html>

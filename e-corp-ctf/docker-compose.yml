@@ -1,0 +1,49 @@
+version: '3.1'
+
+services:
+  blog:
+    build: ./blog
+    restart: always
+    read_only: true
+    volumes:
+      - type: tmpfs
+        target: /var/run/apache2
+    networks:
+      - ecorp-internal
+
+  flag:
+    build: ./flag
+    hostname: admin-panel.local
+    restart: always
+    read_only: true
+    volumes:
+      - type: tmpfs
+        target: /var/cache/lighttpd/deflate
+        tmpfs:
+          mode: 1777
+      - type: tmpfs
+        target: /var/tmp/lighttpd
+        tmpfs:
+          mode: 1777
+    networks:
+      - ecorp-internal
+
+  ingress:
+    image: haproxy:2.8
+    ports:
+      - 8003:80
+    restart: always
+    read_only: true
+    networks:
+      - ecorp-internal
+      - ecorp-external
+    volumes:
+      - type: bind
+        source: ingress/haproxy.cfg
+        target: /usr/local/etc/haproxy/haproxy.cfg
+
+networks:
+  ecorp-internal:
+    internal: true
+
+  ecorp-external:
