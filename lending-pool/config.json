@@ -1,0 +1,28 @@
+{                                                               
+    "access_log": "/var/log/access.unit.log",
+    "listeners": {                                                         
+        "*:80": {                                                          
+            "pass": "routes"                                               
+        }                                                                  
+    },                                                                     
+    "routes": [                                                            
+        {                                                                  
+            "match": {                                                     
+                "uri": "!/index.php"                                       
+            },                                                             
+            "action": {                                                    
+                "share": "/www/public$uri",                                  
+                "fallback": {                                              
+                    "pass": "applications/crypto"                          
+                }                                                          
+            }                                                              
+        }                                                           
+    ],
+    "applications": {                                                      
+        "crypto": {                                                        
+            "type": "php",                                                 
+            "root": "/www/public/",                                               
+            "index": "index.php"                                      
+        }                                                                  
+    }                                                                      
+}
