@@ -1,0 +1,18 @@
+version: '3.11'
+
+services:
+  moedo:
+    build:
+      context: ./dist
+      args:
+        USER: mashiro
+        USER_GECOS: Mashiro Arisaka
+        USER_PASS: Qh3VRn@23jv43Q
+    environment:
+      LOGIN_TIMEOUT: 8
+    ports:
+      - "127.0.0.1:6002:7000"
+    restart: always
+    read_only: true
+    cgroup: host
+    privileged: true
