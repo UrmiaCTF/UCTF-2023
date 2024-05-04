@@ -1,0 +1,6 @@
+{
+    "token": {
+        "algorithm": "aes-192-cbc",
+        "exp": 604800000
+    }
+}

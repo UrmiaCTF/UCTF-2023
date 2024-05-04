@@ -1,0 +1,12 @@
+{
+    "host": "0.0.0.0",
+    "port": 49060,
+    "token": {
+        "password": "ghudate avale mantaghe",
+        "salt": "enteghame sakht"
+    },
+    "db": {
+        "host": "localhost",
+        "port": 27017
+    }
+}

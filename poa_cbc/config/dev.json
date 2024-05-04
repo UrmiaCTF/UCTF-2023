@@ -1,0 +1,12 @@
+{
+    "host": "localhost",
+    "port": 3000,
+    "token": {
+        "password": "ghudate avale mantaghe",
+        "salt": "enteghame sakht"
+    },
+    "db": {
+        "host": "localhost",
+        "port": 27017
+    }
+}

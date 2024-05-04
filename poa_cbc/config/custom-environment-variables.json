@@ -1,0 +1,12 @@
+{
+    "host": "HOST",
+    "port": "PORT",
+    "token": {
+        "password": "TOKEN_PASSWORD",
+        "salt": "TOKEN_SALT"
+    },
+    "db": {
+        "host": "MONGO_HOST",
+        "port": "MONGO_PORT"
+    }
+}

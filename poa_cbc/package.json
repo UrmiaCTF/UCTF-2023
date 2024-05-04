@@ -1,0 +1,33 @@
+{
+  "name": "poa_cbc",
+  "version": "1.0.0",
+  "description": "Padding Oracle Attack on AES-CBC website tokens CTF challenge",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "NODE_ENV=production node app.js",
+    "dev": "NODE_ENV=dev node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.uctf.ir/uctf/poa_cbc.git"
+  },
+  "keywords": [
+    "PaddingOracleAttack",
+    "CBC",
+    "PKCS7",
+    "AES",
+    "Encryption",
+    "CTF"
+  ],
+  "author": "VafaTarighi",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^5.3.1",
+    "config": "^3.3.9",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "uuid": "^9.0.0"
+  }
+}
