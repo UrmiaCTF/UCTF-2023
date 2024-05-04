@@ -1,0 +1,26 @@
+body {
+    background: rgb(63, 82, 99);
+}
+
+.card {
+    background: rgb(48, 48, 48);
+    color: #E69F0F;
+}
+
+.footer-color {
+    background-color: rgb(48, 48, 48);
+}
+
+.footer-text {
+    color: white;
+}
+
+.navbar-brand {
+    color: #E69F0F;
+    font-weight: bolder;
+}
+
+.username {
+    font-size: larger;
+    text-decoration: underline;
+}
