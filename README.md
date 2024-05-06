@@ -69,7 +69,7 @@ View the final scoreboard and rankings for UCTF 2023 on [website link].
 | Farewell           | Misc                | 500             | `UCTF{G00dby3_fr13nd}`     | [Farewell Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/farewell#write-up) |
 | Flutter QRCode           | Forensics            | 450             | `uctf{Three-Domes-Urmia}`     | [Flutter QRCode Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/flutter_QRCode#write-up) |
 | htaccess           | Web                | 250             | `uctf{Sule_Dukol_waterfall}`     | [htaccess Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/htaccess-ctf#write-up) |
-| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
+| HTTPS Decryption           | Forensics                | 250             | `uctf{St._Sarkis_Church}`     | [HTTPS Decryption Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/https-decryption-ctf#write-up) |
 | Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
 | Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
 | Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
