@@ -1,5 +1,9 @@
 # UCTF 2023 Challenges Repository
 
+<p align="center">
+  <img src="https://github.com/UrmiaCTF/UCTF-2023/blob/main/20_questions_ctf/Resources/UCTF.jpg" alt="UCTF Logo">
+</p>
+
 Welcome to the UCTF 2023 Challenges Repository! This repository contains all the challenges, scores, and write-ups for the challenges hosted during the UCTF 2023 competition.
 
 ## Table of Contents
