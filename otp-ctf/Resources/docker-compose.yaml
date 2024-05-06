@@ -1,0 +1,27 @@
+version: '3'
+services:
+  tor:
+    image: goldy/tor-hidden-service:0.3.5.8
+    links:
+      - TFP
+    environment:
+
+        SERVICE1_TOR_SERVICE_HOSTS: 21:TFP:21, 30000:TFP:30000, 30001:TFP:30001, 30002:TFP:30002, 30003:TFP:30003, 30004:TFP:30004, 30005:TFP:30005, 30006:TFP:30006, 30007:TFP:30007, 30008:TFP:30008, 30009:TFP:30009
+        SERVICE1_TOR_SERVICE_VERSION: '3'
+        SERVICE1_TOR_SERVICE_KEY: |
+          PT0gZWQyNTUxOXYxLXNlY3JldDogdHlwZTAgPT0AAAC4wy973DNO7zGnFueDJ7Z8BSCvRiE3uPZR
+          11bbhASaV94jFLcmpo41HSzPV50hudTrHh/tIg3YmFRdUUL5MgAF
+
+  TFP:
+    image: stilliard/pure-ftpd
+    container_name: pure-ftpd
+    volumes:
+      - "./ftp-data:/home/myuser/"
+      - "./welcome.msg:/etc/pure-ftpd/welcome.msg"
+    environment:
+      FTP_USER_NAME: myuser
+      FTP_USER_PASS: mypass
+      FTP_USER_HOME: /home/myuser
+      FTP_BANNER: "Think of IFUM!!!"
+      FTP_READONLY: "yes"
+    restart: always
