@@ -58,8 +58,8 @@ View the final scoreboard and rankings for UCTF 2023 on [website link].
 | Project Meme           | Reverse            | 300             | `uctf{uctf_UrmiaDesert}`     | [Project Meme Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/ProjectMeme#write-up) |
 | Very Super Mario           | Reverse                | 200             | `UCTF{Sa33D_Mar0uf_1s_7h3_MAR10}`     | [Very Super Mario Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/VerySuperMario#write-up) |
 | Warm Up           | Warm Up/Misc            | 25             | `UCTF{W3lc0m3_t0_URMIA}`     | [Warm Up Write-up]([write-ups/challenge2.md](https://github.com/UrmiaCTF/UCTF-2023/tree/main/WarmUp#write-up)) |
-| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
-| Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
+| Hidden Streams           | Steganography                | 250             | `uctf{St. Mary Church}`     | [Hidden Streams Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/ads-ctf#write-up) |
+| Breaking AES           | Cryptography            | 400             | `uctf{d1d_y0u_ju57_br34k_435}`     | [Breaking AES Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/breaking-aes-ctf#write-up) |
 | Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
 | Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
 | Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
