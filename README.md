@@ -55,13 +55,13 @@ View the final scoreboard and rankings for UCTF 2023 on [website link].
 | Cryptic Mansion           | Steganography/OSINT                | 350             | `UCTF{37.496805716848954, 45.63767444207702}`     | [Cryptic Mansion Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/Cryptic-Mansion#-write-up) |
 | Insider's Secret           | Cryptography            | 100             | `UCTF{1_4m_14k3_u2m14}`     | [Insider's Secret Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/Insiders-Secret#-write-up) |
 | Network Punk           | Forensics                | 250             | `uctf{urm14_n3tw0rk}` or `uctf{u r m 1 4 _ n 3 t w 0 r k}`    | [Network Punk Write-up]([write-ups/challenge3.md](https://github.com/UrmiaCTF/UCTF-2023/tree/main/NetworkPunk#write-up)) |
-| Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
-| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
-| Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
-| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
-| Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
-| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
-| Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
+| Project Meme           | Reverse            | 300             | `uctf{uctf_UrmiaDesert}`     | [Project Meme Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/ProjectMeme#write-up) |
+| Very Super Mario           | Reverse                | 200             | `UCTF{Sa33D_Mar0uf_1s_7h3_MAR10}`     | [Very Super Mario Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/VerySuperMario#write-up) |
+| Warm Up           | Warm Up/Misc            | 25             | `UCTF{W3lc0m3_t0_URMIA}`     | [Warm Up Write-up]([write-ups/challenge2.md](https://github.com/UrmiaCTF/UCTF-2023/tree/main/WarmUp#write-up)) |
+| Hidden Streams           | Steganography                | 250             | `uctf{St. Mary Church}`     | [Hidden Streams Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/ads-ctf#write-up) |
+| Breaking AES           | Cryptography            | 400             | `uctf{d1d_y0u_ju57_br34k_435}`     | [Breaking AES Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/breaking-aes-ctf#write-up) |
+| Captcha1 (the Missing Lake)           | Web                | 250             | `UCTF_{7h3_m1551n6_l4k3}`     | [Captcha1 (the Missing Lake) Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/captcha1#write-up) |
+| Captcha2 (the Missing Lake 2)           | Web            | 250             | `UCTF{Arm3n1an_m0uflon}`     | [Captcha2 (the Missing Lake 2) Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/captcha2#write-up) |
 | Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
 | Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
 | Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
