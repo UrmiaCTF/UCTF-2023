@@ -60,8 +60,8 @@ View the final scoreboard and rankings for UCTF 2023 on [website link].
 | Warm Up           | Warm Up/Misc            | 25             | `UCTF{W3lc0m3_t0_URMIA}`     | [Warm Up Write-up]([write-ups/challenge2.md](https://github.com/UrmiaCTF/UCTF-2023/tree/main/WarmUp#write-up)) |
 | Hidden Streams           | Steganography                | 250             | `uctf{St. Mary Church}`     | [Hidden Streams Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/ads-ctf#write-up) |
 | Breaking AES           | Cryptography            | 400             | `uctf{d1d_y0u_ju57_br34k_435}`     | [Breaking AES Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/breaking-aes-ctf#write-up) |
-| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
-| Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
+| Captcha1 (the Missing Lake)           | Web                | 250             | `UCTF_{7h3_m1551n6_l4k3}`     | [Captcha1 (the Missing Lake) Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/captcha1#write-up) |
+| Captcha2 (the Missing Lake 2)           | Web            | 250             | `UCTF{Arm3n1an_m0uflon}`     | [Captcha2 (the Missing Lake 2) Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/captcha2#write-up) |
 | Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
 | Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
 | Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
