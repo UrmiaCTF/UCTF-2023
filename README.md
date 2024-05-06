@@ -1,4 +1,8 @@
-# UCTF 2023 Challenges Repository
+# 🚀 UCTF 2023 Challenges Repository 🏆
+
+<p align="center">
+  <img src="https://github.com/UrmiaCTF/UCTF-2023/blob/main/20_questions_ctf/Resources/UCTF.jpg" alt="UCTF Logo">
+</p>
 
 Welcome to the UCTF 2023 Challenges Repository! This repository contains all the challenges, scores, and write-ups for the challenges hosted during the UCTF 2023 competition.
 
@@ -13,21 +17,21 @@ Welcome to the UCTF 2023 Challenges Repository! This repository contains all the
 - [Contributing](#contributing)
 - [License](#license)
 
-## About UCTF 2023
+## About UCTF 2023 ℹ️
 
-UCTF 2023 was an international Capture The Flag (CTF) competition organized by [Your Organization/Team Name] and held in [Location, Dates]. The competition featured challenges covering various domains such as web security, reverse engineering, cryptography, and more.
+UCTF 2023 was an international Capture The Flag (CTF) competition organized by a team of talented Computer Engineering students from Urmia University and Urmia University of Technology, held online. The competition featured challenges covering various domains such as web security, reverse engineering, cryptography, and more.
 
-## Getting Started
+## Getting Started 🚀
 
 To get started with the challenges, simply clone this repository:
 
 ```bash
-git clone https://github.com/your-username/uctf-2023-challenges.git
+git clone https://github.com/UrmiaCTF/UCTF-2023.git
 ```
 
 Refer to the individual challenge directories for specific instructions and requirements.
 
-## Challenge Categories
+## Challenge Categories 🛡️
 
 The challenges in this repository are categorized into the following categories:
 
@@ -42,11 +46,11 @@ The challenges in this repository are categorized into the following categories:
 
 Each challenge is designed to test different skills and knowledge areas within cybersecurity and computer science.
 
-## Scoreboard
+## Scoreboard 🏅
 
-View the final scoreboard and rankings for UCTF 2023 on [website link].
+View the final scoreboard and rankings for UCTF 2023 on [CTFTime](https://ctftime.org/event/2067).
 
-## Challenges Table
+## Challenges Table 🎯
 
 | Challenge Title       | Challenge Category | Challenge Score | Challenge Flag    | Official Description/Write-up Link           |
 |-----------------------|--------------------|-----------------|-------------------|---------------------------------------------|
@@ -81,15 +85,14 @@ View the final scoreboard and rankings for UCTF 2023 on [website link].
 | MongoDB NoSQL Injection           | Web            | 350             | `UCTF{7_Burukh_Kuchase}`     | [MongoDB NoSQL Injection Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/uctf_mongo#write-up) |
 | Unlock Challenge           | Web/Misc                | 150             | `uctf{urmia4_lake_salt_g3m}`     | [Unlock Challenge Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/unlock-challenge-ctf#write-up) |
 
+## Write-Ups 📝
 
-## Write-Ups
+Explore detailed write-ups and solutions for each challenge in it's own directory. Contributors and participants are encouraged to submit their write-ups following the template provided.
 
-Explore detailed write-ups and solutions for each challenge in the [Write-Ups](write-ups/) directory. Contributors and participants are encouraged to submit their write-ups following the template provided.
-
-## Contributing
+## Contributing 🤝
 
 We welcome contributions from the community! If you have additional challenges, write-ups, or improvements to existing content, please follow the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md) to contribute to this repository.
 
-## License
+## License 📄
 
 This repository is licensed under the [MIT License](LICENSE), which means you are free to use, modify, and distribute the content with proper attribution.
