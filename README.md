@@ -76,11 +76,11 @@ View the final scoreboard and rankings for UCTF 2023 on [website link].
 | noql           | Cryptography            | 350             | `ucf{urum_noql}`     | [noql Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/noql_uctf#write-up) |
 | OTP (Onion Transfer Protocol)           | Misc/Forensics                | 250             | `CTF{N33DL3_AM0NG_0NI0NS}`     | [OTP (Onion Transfer Protocol) Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/otp-ctf#write-up) |
 | Padding Oracle Adventure           | Web/Cryptography                | 350             | `UCTF{Pakdis_Factory}`     | [Padding Oracle Adventure Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/poa_cbc#write-up) |
-| Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
-| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
-| ...                   | ...                | ...             | ...               | ...                                         |
+| Status Page           | Web/PWN            | 500             | `uctf{kaznyannyan4}`     | [Status Page Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/status-page-ctf#write-up) |
+| The Void           | Web/Misc                | 250             | `uctf{pr4y1n6_47_57_m4ry}`     | [The Void Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/the-void-ctf#write-up) |
+| MongoDB NoSQL Injection           | Web            | 350             | `UCTF{7_Burukh_Kuchase}`     | [MongoDB NoSQL Injection Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/uctf_mongo#write-up) |
+| Unlock Challenge           | Web/Misc                | 150             | `uctf{urmia4_lake_salt_g3m}`     | [Unlock Challenge Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/unlock-challenge-ctf#write-up) |
 
-*Note: Add more challenges to the table as needed.*
 
 ## Write-Ups
 
