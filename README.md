@@ -62,10 +62,19 @@ View the final scoreboard and rankings for UCTF 2023 on [website link].
 | Breaking AES           | Cryptography            | 400             | `uctf{d1d_y0u_ju57_br34k_435}`     | [Breaking AES Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/breaking-aes-ctf#write-up) |
 | Captcha1 (the Missing Lake)           | Web                | 250             | `UCTF_{7h3_m1551n6_l4k3}`     | [Captcha1 (the Missing Lake) Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/captcha1#write-up) |
 | Captcha2 (the Missing Lake 2)           | Web            | 250             | `UCTF{Arm3n1an_m0uflon}`     | [Captcha2 (the Missing Lake 2) Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/captcha2#write-up) |
+| Deb File (The Old Systems)           | Reverse/Steganography                | 150             | `UCTF{c4n_p3n6u1n5_5urv1v3_1n_54l7_w473r}`     | [Deb File (The Old Systems) Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/deb-file#write-up) |
+| Deleted Message           | Forensics            | 400             | `uctf{l057_1n_urm14}`     | [Deleted Message Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/deleted-message-ctf#write-up) |
+| Dorna           | Steganography                | 350             | `uctf{dorna_lar_yovasi}`     | [Dorna Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/dorna#write-up) |
+| E Corp.           | Web/PWN            | 250             | `uctf{4z174_1n_urm14}`     | [E Corp. Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/e-corp-ctf#write-up) |
+| Farewell           | Misc                | 500             | `UCTF{G00dby3_fr13nd}`     | [Farewell Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/farewell#write-up) |
+| Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
+| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
 | Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
 | Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
 | Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
+| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
 | Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
+| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
 | Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
 | Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
 | Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
