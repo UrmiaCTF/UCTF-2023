@@ -67,20 +67,20 @@ View the final scoreboard and rankings for UCTF 2023 on [website link].
 | Dorna           | Steganography                | 350             | `uctf{dorna_lar_yovasi}`     | [Dorna Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/dorna#write-up) |
 | E Corp.           | Web/PWN            | 250             | `uctf{4z174_1n_urm14}`     | [E Corp. Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/e-corp-ctf#write-up) |
 | Farewell           | Misc                | 500             | `UCTF{G00dby3_fr13nd}`     | [Farewell Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/farewell#write-up) |
-| Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
-| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
-| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
-| Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
-| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
-| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
-| Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
-| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
-| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
-| Challenge 2           | Reverse            | 150             | `uctf{flag2}`     | [Challenge 2 Write-up](write-ups/challenge2.md) |
-| Challenge 3           | PWN                | 200             | `uctf{flag3}`     | [Challenge 3 Write-up](write-ups/challenge3.md) |
-| ...                   | ...                | ...             | ...               | ...                                         |
+| Flutter QRCode           | Forensics            | 450             | `uctf{Three-Domes-Urmia}`     | [Flutter QRCode Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/flutter_QRCode#write-up) |
+| htaccess           | Web                | 250             | `uctf{Sule_Dukol_waterfall}`     | [htaccess Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/htaccess-ctf#write-up) |
+| HTTPS Decryption           | Forensics                | 250             | `uctf{St._Sarkis_Church}`     | [HTTPS Decryption Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/https-decryption-ctf#write-up) |
+| LendingPool           | Misk            | 450             | `UCTF{Urmia_P4radise0fIran}`     | [LendingPool Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/lending-pool#write-up) |
+| License, Please           | Cryptography                | 400             | `uctf{m4yu5h11_15_my_w41fu}`     | [License, Please Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/license-please-ctf#write-up) |
+| moedo           | PWN                | 300             | `uctf{m45h1r0_d1dn7_61v3_up}`     | [moedo Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/moedo-ctf#write-up) |
+| noql           | Cryptography            | 350             | `ucf{urum_noql}`     | [noql Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/noql_uctf#write-up) |
+| OTP (Onion Transfer Protocol)           | Misc/Forensics                | 250             | `CTF{N33DL3_AM0NG_0NI0NS}`     | [OTP (Onion Transfer Protocol) Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/otp-ctf#write-up) |
+| Padding Oracle Adventure           | Web/Cryptography                | 350             | `UCTF{Pakdis_Factory}`     | [Padding Oracle Adventure Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/poa_cbc#write-up) |
+| Status Page           | Web/PWN            | 500             | `uctf{kaznyannyan4}`     | [Status Page Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/status-page-ctf#write-up) |
+| The Void           | Web/Misc                | 250             | `uctf{pr4y1n6_47_57_m4ry}`     | [The Void Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/the-void-ctf#write-up) |
+| MongoDB NoSQL Injection           | Web            | 350             | `UCTF{7_Burukh_Kuchase}`     | [MongoDB NoSQL Injection Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/uctf_mongo#write-up) |
+| Unlock Challenge           | Web/Misc                | 150             | `uctf{urmia4_lake_salt_g3m}`     | [Unlock Challenge Write-up](https://github.com/UrmiaCTF/UCTF-2023/tree/main/unlock-challenge-ctf#write-up) |
 
-*Note: Add more challenges to the table as needed.*
 
 ## Write-Ups
 
